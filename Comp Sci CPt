@@ -1,1 +1,161 @@
+'''
+-------------------------------------------------------------------------------
+Name:  red_moon_in_venus.py
+Purpose: draw a picture (Also animate it)
+
+
+Author:   Frank Handal
+
+
+Created:  13/04/2024
+------------------------------------------------------------------------------
+'''
+
+#importing what I need
+import pygame
+import random
+
+def row_1():
+    pygame.draw.rect(screen, jep_blue, [220, 100, 160, 80])
+    pygame.draw.rect(screen, jep_blue, [220, 220, 160, 80])
+    pygame.draw.rect(screen, jep_blue, [220, 340, 160, 80])
+    pygame.draw.rect(screen, jep_blue, [220, 460, 160, 80])
+    pygame.draw.rect(screen, jep_blue, [220, 580, 160, 80])
+def row_2():
+    pygame.draw.rect(screen, jep_blue, [420, 100, 160, 80])
+    pygame.draw.rect(screen, jep_blue, [420, 220, 160, 80])
+    pygame.draw.rect(screen, jep_blue, [420, 340, 160, 80])
+    pygame.draw.rect(screen, jep_blue, [420, 460, 160, 80])
+    pygame.draw.rect(screen, jep_blue, [420, 580, 160, 80])
+def row_3():
+    pygame.draw.rect(screen, jep_blue, [620, 100, 160, 80])
+    pygame.draw.rect(screen, jep_blue, [620, 220, 160, 80])
+    pygame.draw.rect(screen, jep_blue, [620, 340, 160, 80])
+    pygame.draw.rect(screen, jep_blue, [620, 460, 160, 80])
+    pygame.draw.rect(screen, jep_blue, [620, 580, 160, 80])
+def row_4():
+    pygame.draw.rect(screen, jep_blue, [820, 100, 160, 80])
+    pygame.draw.rect(screen, jep_blue, [820, 220, 160, 80])
+    pygame.draw.rect(screen, jep_blue, [820, 340, 160, 80])
+    pygame.draw.rect(screen, jep_blue, [820, 460, 160, 80])
+    pygame.draw.rect(screen, jep_blue, [820, 580, 160, 80])
+
+
+def text_200():
+    font = pygame.font.SysFont('Calibri', 50, True, False)
+    text = font.render("$200", True, jep_gold)
+    screen.blit(text, [250, 240])
+    screen.blit(text, [450, 240])
+    screen.blit(text, [650, 240])
+    screen.blit(text, [850, 240])
+def text_400():
+    font = pygame.font.SysFont('Calibri', 50, True, False)
+    text = font.render("$400", True, jep_gold)
+    screen.blit(text, [250, 360])
+    screen.blit(text, [450, 360])
+    screen.blit(text, [650, 360])
+    screen.blit(text, [850, 360])
+def text_600():
+    font = pygame.font.SysFont('Calibri', 50, True, False)
+    text = font.render("$600", True, jep_gold)
+    screen.blit(text, [250, 480])
+    screen.blit(text, [450, 480])
+    screen.blit(text, [650, 480])
+    screen.blit(text, [850, 480])
+def text_800():
+    font = pygame.font.SysFont('Calibri', 50, True, False)
+    text = font.render("$800", True, jep_gold)
+    screen.blit(text, [250, 600])
+    screen.blit(text, [450, 600])
+    screen.blit(text, [650, 600])
+    screen.blit(text, [850, 600])
+
+
+def categories():
+    font = pygame.font.SysFont('Calibri', 25, True, False)
+    text = font.render("Pop Culture", True, WHITE)
+    screen.blit(text, [240, 130])
+
+    font = pygame.font.SysFont('Calibri', 25, True, False)
+    text = font.render("Movies", True, WHITE)
+    screen.blit(text, [460, 130])
+
+    font = pygame.font.SysFont('Calibri', 25, True, False)
+    text = font.render("Mythology", True, WHITE)
+    screen.blit(text, [640, 130])
+
+    font = pygame.font.SysFont('Calibri', 25, True, False)
+    text = font.render("Riddles", True, WHITE)
+    screen.blit(text, [860, 130])
+
+def movies_1():
+    pygame.draw.rect(screen, jep_blue, [100, 100, 1000, 580])
+    font = pygame.font.SysFont('Calibri', 50, True, False)
+    text = font.render("In what movie does the imfamous quote", True, WHITE)
+    screen.blit(text, [180, 300])
+
+    text = font.render("\"With great power comes great responsibility\"", True, WHITE)
+    screen.blit(text, [120, 420])
+def movies_2():
+    pygame.draw.rect(screen, jep_blue, [100, 100, 1000, 580])
+    font = pygame.font.SysFont('Calibri', 75, True, False)
+    text = font.render("Red and Blue Pill", True, WHITE)
+    screen.blit(text, [350, 350])
+
+
+# Defined the colours that I need
+
+WHITE = (255, 255, 255)
+
+jep_blue = (42, 43, 100)
+jep_gold = (233, 173, 71)
+pygame.init()
+#Defining the size of the picture
+size = (1200,800)
+
+screen = pygame.display.set_mode(size)
+pygame.display.set_caption("My Game")
+
+
+#Creating the basics for my animation
+rect_x = 0
+rect_y = 0
+rect_change_x = 50
+rect_change_y = 50
+
+
+
+
+
+clock = pygame.time.Clock()
+
+done = False
+while not done:
+#making the meteor
+
+  pygame.display.flip()
+  clock.tick(30)
+
+  for event in pygame.event.get():
+      if event.type == pygame.QUIT:
+          done = True
+
+
+
+#drawing my main subjects
+  row_1()
+  row_2()
+  row_3()
+  row_4()
+  categories()
+  text_200()
+  text_400()
+  text_600()
+  text_800()
+  pygame.display.flip()
+  clock.tick(20)
+
+pygame.quit()
+
+
 #Put the CPT Code Here
